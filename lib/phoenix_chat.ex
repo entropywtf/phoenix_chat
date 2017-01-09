@@ -12,6 +12,8 @@ defmodule PhoenixChat do
       supervisor(PhoenixChat.Repo, []),
       # Start the endpoint when the application starts
       supervisor(PhoenixChat.Endpoint, []),
+      # Presence module in order to track who’s currently online in our chat room
+      supervisor(PhoenixChat.Presence, []),
       # Start your own worker by calling: PhoenixChat.Worker.start_link(arg1, arg2, arg3)
       # worker(PhoenixChat.Worker, [arg1, arg2, arg3]),
     ]
